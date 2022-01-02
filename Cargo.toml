@@ -1,0 +1,18 @@
+[package]
+name = "darksouls3_cheats"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "darksouls3_cheats"
+crate-type = ["cdylib"]
+
+[dependencies]
+winapi = { version = "0.3.7", features = ["consoleapi", "libloaderapi"] }
+sysinfo = "0.22.3"
+fltk = { version = "1.2.24", features = ["fltk-bundled"] } 
+byteorder = "1.4"
+dll-injector = { git = "https://github.com/seal9055/local_crates/", branch = "main" }
+
