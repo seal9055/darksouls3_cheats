@@ -142,12 +142,10 @@ unsafe fn entry_point(base: winapi::shared::minwindef::LPVOID) -> u32 {
         let HASINFST = HASINFST.clone();
         move |e| {
             if e.is_toggled() {
-                e.set_label("On");
                 HASINFST.store(true, Ordering::Relaxed);
                 e.toggle(true);
                 e.set_label("On");
             } else { 
-                e.set_label("Off");
                 HASINFST.store(false, Ordering::Relaxed);
                 e.toggle(false);
                 e.set_label("Off");
@@ -159,12 +157,10 @@ unsafe fn entry_point(base: winapi::shared::minwindef::LPVOID) -> u32 {
         let HASINFHP = HASINFHP.clone();
         move |e| {
             if e.is_toggled() {
-                e.set_label("On");
                 HASINFHP.store(true, Ordering::Relaxed);
                 e.toggle(true);
                 e.set_label("On");
             } else { 
-                e.set_label("Off");
                 HASINFHP.store(false, Ordering::Relaxed);
                 e.toggle(false);
                 e.set_label("Off");
@@ -176,12 +172,10 @@ unsafe fn entry_point(base: winapi::shared::minwindef::LPVOID) -> u32 {
         let HASINFFP = HASINFFP.clone();
         move |e| {
             if e.is_toggled() {
-                e.set_label("On");
                 HASINFFP.store(true, Ordering::Relaxed);
                 e.toggle(true);
                 e.set_label("On");
             } else { 
-                e.set_label("Off");
                 HASINFFP.store(false, Ordering::Relaxed);
                 e.toggle(false);
                 e.set_label("Off");
@@ -266,7 +260,6 @@ unsafe fn entry_point(base: winapi::shared::minwindef::LPVOID) -> u32 {
             write_mem(base_addr + FPOFFSET, 9999, vec![0x40, 0x28, 0x3A0, 0x70, 0x9C]);
         }
     });
-
     app.run().unwrap();
     0
 }

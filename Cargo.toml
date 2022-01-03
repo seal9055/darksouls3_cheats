@@ -15,4 +15,3 @@ sysinfo = "0.22.3"
 fltk = { version = "1.2.24", features = ["fltk-bundled"] } 
 byteorder = "1.4"
 dll-injector = { git = "https://github.com/seal9055/local_crates/", branch = "main" }
-
